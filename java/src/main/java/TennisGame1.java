@@ -55,23 +55,15 @@ public class TennisGame1 implements TennisGame {
                         score += "-";
                         tempScore = m_score2;
                     }
-                    switch (tempScore) {
-                        case 0:
-                            score += "Love";
-                            break;
-                        case 1:
-                            score += "Fifteen";
-                            break;
-                        case 2:
-                            score += "Thirty";
-                            break;
-                        case 3:
-                            score += "Forty";
-                            break;
-                    }
+                    score += getStringOfScore(tempScore);
                 }
             }
         }
         return score;
+    }
+
+    private String getStringOfScore(int tempScore) {
+        String[] scoreToStringMap = {"Love", "Fifteen", "Thirty", "Forty"};
+        return scoreToStringMap[tempScore];
     }
 }
